@@ -17,15 +17,15 @@ def perform_query():
         return jsonify(error.messages), 400
 
     first_result = build_query(
-        cmd=data['cmd1'],
-        value=data['value1'],
-        file_name=data['file_name'],
+        cmd=validated_data['cmd1'],
+        value=validated_data['value1'],
+        file_name=validated_data['file_name'],
         data=None,
     )
     second_result = build_query(
-        cmd=data['cmd2'],
-        value=data['value2'],
-        file_name=data['file_name'],
+        cmd=validated_data['cmd2'],
+        value=validated_data['value2'],
+        file_name=validated_data['file_name'],
         data=first_result,
     )
     return jsonify(second_result)
