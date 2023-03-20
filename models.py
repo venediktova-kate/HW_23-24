@@ -1,3 +1,5 @@
+from typing import Iterable
+
 from marshmallow import Schema, fields
 
 
